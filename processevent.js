@@ -25,4 +25,4 @@ async function run() {
 	await client.end();
 }
 
-run();
+await run();
