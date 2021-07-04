@@ -1,0 +1,79 @@
+### 
+POST https://enz1rs565zfh3nb.m.pipedream.net 
+Content-Type: application/json
+
+{
+  "challenge" : "asdfasdfasdf"
+}
+
+### 
+POST https://enz1rs565zfh3nb.m.pipedream.net 
+Content-Type: application/json
+
+{
+	"event": {
+		"userId": 23043712,
+		"originalTriggerUuid": null,
+		"boardId": 1448019241,
+		"groupId": "new_group",
+		"pulseId": 1448033025,
+		"pulseName": "Setup: Azure B2C tenant for dev, pre-prod",
+		"columnId": "status3",
+		"columnType": "color",
+		"columnTitle": "Status",
+		"value": {
+			"label": {
+				"index": 1,
+				"text": "Done",
+				"style": {
+					"color": "#00c875",
+					"border": "#00B461",
+					"var_name": "green-shadow"
+				}
+			},
+			"post_id": null
+		},
+		"previousValue": {
+			"label": {
+				"index": 5,
+				"text": null,
+				"style": {
+					"color": "#c4c4c4",
+					"border": "#B0B0B0",
+					"var_name": "grey"
+				}
+			},
+			"post_id": null
+		},
+		"changedAt": 1625366566.0915213,
+		"isTopGroup": true,
+		"app": "monday",
+		"type": "update_column_value",
+		"triggerTime": "2021-07-04T02:42:46.509Z",
+		"subscriptionId": 59483561,
+		"triggerUuid": "c564aebf1422bdf826b2ce6b1150288d"
+	}
+}
+
+###
+POST https://rt.pipedream.com/sql
+Content-Type: application/json
+Authorization: Bearer 2218f4de658cbe12e66c562089f36954
+
+{
+  "query": "SELECT COUNT(*) FROM mondayevents"
+}
+
+###
+POST https://rt.pipedream.com/sql
+Content-Type: application/json
+Authorization: Bearer 2218f4de658cbe12e66c562089f36954
+
+{
+  "query": "SELECT boardid, pulseid, pulsename,columnid,value.label.text,triggertime from mondayevents limit 10"
+}
+
+###
+GET https://api.pipedream.com/v1/users/me
+Content-Type: application/json
+Authorization: Bearer 2218f4de658cbe12e66c562089f36954
